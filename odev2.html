@@ -1,0 +1,107 @@
+
+</<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>RomanNumConvert</title>
+  </head>
+  <body background="http://www.antiktarih.com/wp-content/uploads/2018/03/Blessed_by_the_Gods_Ancient_Rome_competition_by_OzzyY2KX-1-800x445.png">
+    <div style="width: 500px;
+    height: 30px;
+    padding: 15px;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    top: 40%;
+    left: 45%;
+    margin-left: -250px;
+    margin-top: -225px;
+    border-radius: 45px;">
+    <div align="center"
+    <h2><font size="6" color="Black"  ><i>Roman Numeral Convert</i></font></h2>
+  </div>
+    </div>
+
+    <div style="width: 600px;
+    height: 260px;
+    padding: 15px;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    top: 40%;
+    left: 45%;
+    margin-left: -280px;
+    margin-top: -20px;
+    border-radius: 45px;">
+<div align=center>
+    <h1><i>Enter a number or roman numeral</i></h1>
+
+    <input  type="text" id="convertInput"></input>
+
+</div>
+<br><br>
+<div align="right">
+<button style=" border-radius: 8px;  background-color: 	#B0B0B0  ; color: aliceblue;" type="button"
+           id="convertRom"><font size="4" face="arial">Convert to Number</font></button></div>
+
+
+
+           <div align="left">
+           <button style=" border-radius: 8px;  background-color: 	#B0B0B0  ; color: aliceblue;" type="button"
+                      id="convertNum"><font size="4" face="arial">Convert to Roman</font></button></div>
+  </div>
+
+  <script>
+  document.getElementById("convertNum").onclick = function () {
+     let convert = document.getElementById("convertInput").value;
+        if (convert<=3999 &&convert>=1) {
+              let romannum = {
+                  M: 1000,
+                  CM: 900,
+                  D: 500,
+                  CD: 400,
+                  C: 100,
+                  XC: 90,
+                  L: 50,
+                  XL: 40,
+                  X: 10,
+                  IX: 9,
+                  V: 5,
+                  IV: 4,
+                  I: 1,
+              };
+              let roma = "";
+              for (var t in romannum) {
+                  while (convert >= romannum[t]) {
+                      roma += t;
+                     convert -= romannum[t];
+                  }
+              }
+              alert(roma)
+          }
+      }
+      document.getElementById("convertRom").onclick= function() {
+                let sum = 0;
+                 let convert = document.getElementById("convertInput").value;
+                 let num = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
+                 let roman = ["M", "CM","D","CD","C", "XC", "L", "XL", "X","IX","V","IV","I"];
+                 for (let i = 0;i<=num.length;i++) {
+                     while (convert.indexOf(roman[i]) === 0){
+                         sum += num[i];
+                         convert = convert.replace(roman[i],'');
+         }
+       }
+                 if(sum>=1 && sum<=3999){
+                   alert(sum);
+                     }
+     }
+
+
+
+   </script>
+
+  </body>
+</html>
+//Kaynaklar
+//https://selftaughtjs.com/algorithm-sundays-converting-roman-numerals
+//https://www.dijitalders.com/icerik/420/sayilari_roma_rakamina_roma_rakamlarini_sayilara_ceviren_uygulama.html
+//https://www.youtube.com/watch?v=aHaAXc4eqlg
+//https://www.w3schools.com/html/
